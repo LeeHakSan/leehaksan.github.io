@@ -34,45 +34,88 @@
 
   <main>
 
-    <!-- ===== HERO ===== -->
-    <!-- 1366×768 기준: vh 단위로 화면에 딱 맞게 표시 -->
+    <!-- ===== HERO =====
+         카드 3 요구: 첫 화면에 소개·활동·근거 3가지 가로 넘침 없이
+         → 좌: 소개(이름/직함/설명) | 우: 활동(대표 프로젝트) + 근거(GitHub)
+    -->
     <section class="hero" id="hero" aria-labelledby="hero-title">
-      <div class="hero__content">
-        <p class="hero__greeting">안녕하세요, 저는</p>
-        <h1 class="hero__title" id="hero-title">이학산<span class="hero__dot">.</span></h1>
-        <p class="hero__subtitle">Java &amp; Spring Boot 백엔드 개발자</p>
-        <p class="hero__desc">
-          사용자 문제를 코드로 해결하는 것을 좋아합니다.<br />
-          백엔드 로직과 깔끔한 API 설계에 집중합니다.
-        </p>
-        <div class="hero__cta">
-          <a href="#projects" class="btn btn--primary">프로젝트 보기</a>
-          <a href="#contact"  class="btn btn--outline">연락하기</a>
+      <div class="hero__inner">
+
+        <!-- 소개 -->
+        <div class="hero__intro">
+          <p class="hero__greeting">안녕하세요, 저는</p>
+          <h1 class="hero__title" id="hero-title">이학산<span class="hero__dot">.</span></h1>
+          <p class="hero__subtitle">Java &amp; Spring Boot 백엔드 개발자</p>
+          <p class="hero__desc">
+            사용자 문제를 코드로 해결하는 것을 좋아합니다.<br />
+            백엔드 로직과 깔끔한 API 설계에 집중합니다.
+          </p>
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary">프로젝트 보기</a>
+            <a href="#contact"  class="btn btn--outline">연락하기</a>
+          </div>
+        </div>
+
+        <!-- 활동 + 근거 -->
+        <div class="hero__evidence" aria-label="대표 활동과 근거">
+
+          <!-- 활동: 대표 프로젝트 -->
+          <div class="hero__project-card">
+            <span class="hero__project-label">대표 활동</span>
+            <h2 class="hero__project-title">SevMerge</h2>
+            <p class="hero__project-desc">
+              4인 팀 협업 매칭 플랫폼.<br />
+              Spring Boot REST API + MySQL JPA 설계 담당.
+            </p>
+            <div class="hero__project-tags" aria-label="사용 기술">
+              <span class="tag">Java</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">MySQL</span>
+            </div>
+          </div>
+
+          <!-- 근거: 공개 링크 -->
+          <a
+            href="https://github.com/bin1998-git/SevMerge"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero__evidence-link"
+            aria-label="SevMerge GitHub 저장소 (새 탭에서 열림)"
+          >
+            <span class="hero__evidence-icon" aria-hidden="true">↗</span>
+            <span>
+              <strong>근거 확인</strong><br />
+              github.com/bin1998-git/SevMerge
+            </span>
+          </a>
+
         </div>
       </div>
+
       <div class="hero__scroll" aria-hidden="true">
         <span class="hero__scroll-line"></span>
       </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
+    <!-- ===== ABOUT =====
+         카드 1 요구: 대상 문장 + 공개·비공개 범위 화면에 보임
+         카드 2 요구: 강점 3개 → 상황·행동·결과 형식
+    -->
     <section class="about section" id="about" aria-labelledby="about-title">
       <div class="container">
         <h2 class="section__title" id="about-title">About Me</h2>
+
+        <!-- 대상 문장: 카드 1 요구사항 -->
+        <p class="about__target">
+          이 페이지는 <strong>백엔드 개발자를 채용하는 팀</strong>에게
+          이학산이 실제로 무엇을 만들었고 어떤 사고로 문제를 푸는지 보여주기 위한 것입니다.
+        </p>
+
         <div class="about__grid">
           <div class="about__avatar" aria-hidden="true">
             <div class="about__avatar-placeholder">HS</div>
           </div>
           <div class="about__text">
-            <p>
-              CS를 전공하며 <strong>Java와 Spring Boot</strong>를 중심으로
-              백엔드 개발을 공부하고 있는 이학산입니다.
-            </p>
-            <p>
-              이론을 배우는 것에서 그치지 않고 팀 프로젝트를 통해
-              실제 서비스 개발 경험을 쌓았습니다. 코드 한 줄에도
-              <em>왜 이렇게 짜는가</em>를 고민하는 개발자가 되고자 합니다.
-            </p>
             <ul class="about__list" aria-label="기본 정보">
               <li><span class="about__label">이름</span> 이학산 (Lee Hak-san)</li>
               <li><span class="about__label">전공</span> 컴퓨터공학</li>
@@ -89,6 +132,71 @@
             </ul>
           </div>
         </div>
+
+        <!-- 강점 3개: 상황·행동·결과 형식 (카드 2 요구) -->
+        <div class="strengths" aria-label="강점 3가지">
+          <h3 class="strengths__title">강점 / 취향</h3>
+          <ol class="strengths__list" role="list">
+
+            <li class="strength-item">
+              <h4 class="strength-item__name">팀 협업 속 백엔드 설계</h4>
+              <dl class="strength-item__sar">
+                <div class="sar-row">
+                  <dt class="sar-row__label sar-row__label--s">상황</dt>
+                  <dd class="sar-row__text">SevMerge 팀 프로젝트에서 4명이 동시에 백엔드를 개발해야 했습니다.</dd>
+                </div>
+                <div class="sar-row">
+                  <dt class="sar-row__label sar-row__label--a">행동</dt>
+                  <dd class="sar-row__text">GitHub Flow를 제안해 PR 리뷰 문화를 만들고, API 명세서를 먼저 작성해 충돌을 줄였습니다.</dd>
+                </div>
+                <div class="sar-row">
+                  <dt class="sar-row__label sar-row__label--r">결과</dt>
+                  <dd class="sar-row__text">4인 팀이 기능 충돌 없이 병렬 개발을 완료하고 프로젝트를 기간 내 마쳤습니다.
+                    <a href="https://github.com/bin1998-git/SevMerge" target="_blank" rel="noopener noreferrer" class="sar-link" aria-label="SevMerge GitHub (새 탭)">↗ GitHub 확인</a>
+                  </dd>
+                </div>
+              </dl>
+            </li>
+
+            <li class="strength-item">
+              <h4 class="strength-item__name">오류 원인을 끝까지 찾는 습관</h4>
+              <dl class="strength-item__sar">
+                <div class="sar-row">
+                  <dt class="sar-row__label sar-row__label--s">상황</dt>
+                  <dd class="sar-row__text">Spring Security + JWT 구현 중 토큰 만료 후에도 인증이 통과되는 버그가 발생했습니다.</dd>
+                </div>
+                <div class="sar-row">
+                  <dt class="sar-row__label sar-row__label--a">행동</dt>
+                  <dd class="sar-row__text">공식 문서로 필터 체인 실행 순서를 분석하고, 만료 검사 필터 위치가 잘못된 것을 확인해 수정했습니다.</dd>
+                </div>
+                <div class="sar-row">
+                  <dt class="sar-row__label sar-row__label--r">결과</dt>
+                  <dd class="sar-row__text">인증 오류 0건으로 블로그 API 완성. 이후 Security 필터 순서를 먼저 설계하는 습관이 생겼습니다.</dd>
+                </div>
+              </dl>
+            </li>
+
+            <li class="strength-item">
+              <h4 class="strength-item__name">직접 만들며 배우는 자기주도 학습</h4>
+              <dl class="strength-item__sar">
+                <div class="sar-row">
+                  <dt class="sar-row__label sar-row__label--s">상황</dt>
+                  <dd class="sar-row__text">백엔드 위주 공부로 프론트엔드 기초가 부족해 협업 시 소통이 어렵다고 느꼈습니다.</dd>
+                </div>
+                <div class="sar-row">
+                  <dt class="sar-row__label sar-row__label--a">행동</dt>
+                  <dd class="sar-row__text">React 없이 Vanilla JS만으로 이 포트폴리오를 직접 구현했습니다. 모달·필터·IntersectionObserver·접근성까지 적용했습니다.</dd>
+                </div>
+                <div class="sar-row">
+                  <dt class="sar-row__label sar-row__label--r">결과</dt>
+                  <dd class="sar-row__text">DOM 조작 원리를 이해하고, 백엔드-프론트 연결 흐름을 한층 구체적으로 그릴 수 있게 됐습니다.</dd>
+                </div>
+              </dl>
+            </li>
+
+          </ol>
+        </div>
+
       </div>
     </section>
 
