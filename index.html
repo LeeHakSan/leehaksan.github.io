@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="이학산 포트폴리오 - Java/Spring Boot 백엔드 개발자" />
+  <title>이학산 | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" role="banner">
+    <nav class="nav" aria-label="메인 네비게이션">
+      <a href="#hero" class="nav__logo" aria-label="홈으로 이동">HS<span>.</span></a>
+      <button
+        class="nav__toggle"
+        aria-label="메뉴 열기/닫기"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+      <ul class="nav__menu" id="nav-menu" role="list">
+        <li><a href="#about"    class="nav__link">About</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#skills"   class="nav__link">Skills</a></li>
+        <li><a href="#contact"  class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <!-- 1366×768 기준: vh 단위로 화면에 딱 맞게 표시 -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__content">
+        <p class="hero__greeting">안녕하세요, 저는</p>
+        <h1 class="hero__title" id="hero-title">이학산<span class="hero__dot">.</span></h1>
+        <p class="hero__subtitle">Java &amp; Spring Boot 백엔드 개발자</p>
+        <p class="hero__desc">
+          사용자 문제를 코드로 해결하는 것을 좋아합니다.<br />
+          백엔드 로직과 깔끔한 API 설계에 집중합니다.
+        </p>
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--primary">프로젝트 보기</a>
+          <a href="#contact"  class="btn btn--outline">연락하기</a>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 class="section__title" id="about-title">About Me</h2>
+        <div class="about__grid">
+          <div class="about__avatar" aria-hidden="true">
+            <div class="about__avatar-placeholder">HS</div>
+          </div>
+          <div class="about__text">
+            <p>
+              CS를 전공하며 <strong>Java와 Spring Boot</strong>를 중심으로
+              백엔드 개발을 공부하고 있는 이학산입니다.
+            </p>
+            <p>
+              이론을 배우는 것에서 그치지 않고 팀 프로젝트를 통해
+              실제 서비스 개발 경험을 쌓았습니다. 코드 한 줄에도
+              <em>왜 이렇게 짜는가</em>를 고민하는 개발자가 되고자 합니다.
+            </p>
+            <ul class="about__list" aria-label="기본 정보">
+              <li><span class="about__label">이름</span> 이학산 (Lee Hak-san)</li>
+              <li><span class="about__label">전공</span> 컴퓨터공학</li>
+              <li><span class="about__label">관심</span> 백엔드 / REST API / DB 설계</li>
+              <li>
+                <span class="about__label">GitHub</span>
+                <a
+                  href="https://github.com/LeeHakSan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub 프로필 (새 탭)"
+                >github.com/LeeHakSan</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="projects section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 class="section__title" id="projects-title">Projects</h2>
+
+        <!-- 필터 버튼: 카테고리별 필터링 (상호작용 기능 1) -->
+        <div class="filter" role="group" aria-label="프로젝트 카테고리 필터">
+          <button class="filter__btn filter__btn--active" data-filter="all"  aria-pressed="true">전체</button>
+          <button class="filter__btn" data-filter="team"  aria-pressed="false">팀 프로젝트</button>
+          <button class="filter__btn" data-filter="solo"  aria-pressed="false">개인 프로젝트</button>
+          <button class="filter__btn" data-filter="study" aria-pressed="false">학습/실습</button>
+        </div>
+
+        <!-- 프로젝트 카드 목록 -->
+        <ul class="projects__grid" id="projects-grid" role="list" aria-live="polite" aria-label="프로젝트 목록">
+
+          <li class="project-card" data-category="team" data-index="0">
+            <div class="project-card__inner">
+              <span class="project-card__badge">팀 프로젝트</span>
+              <h3 class="project-card__title">SevMerge</h3>
+              <p class="project-card__summary">스터디/팀 협업 매칭 플랫폼. Spring Boot + MySQL로 구현한 RESTful API 서비스.</p>
+              <div class="project-card__tags" aria-label="사용 기술">
+                <span class="tag">Java</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">JPA</span>
+              </div>
+              <button
+                class="btn btn--sm project-card__detail"
+                data-project="0"
+                aria-label="SevMerge 상세정보 보기"
+              >상세보기</button>
+            </div>
+          </li>
+
+          <li class="project-card" data-category="solo" data-index="1">
+            <div class="project-card__inner">
+              <span class="project-card__badge project-card__badge--solo">개인 프로젝트</span>
+              <h3 class="project-card__title">Spring Blog API</h3>
+              <p class="project-card__summary">REST API 설계 학습 목적으로 만든 블로그 백엔드. CRUD, 인증, 페이지네이션 구현.</p>
+              <div class="project-card__tags" aria-label="사용 기술">
+                <span class="tag">Spring Boot</span>
+                <span class="tag">Spring Security</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <button
+                class="btn btn--sm project-card__detail"
+                data-project="1"
+                aria-label="Spring Blog API 상세정보 보기"
+              >상세보기</button>
+            </div>
+          </li>
+
+          <li class="project-card" data-category="study" data-index="2">
+            <div class="project-card__inner">
+              <span class="project-card__badge project-card__badge--study">학습/실습</span>
+              <h3 class="project-card__title">Portfolio Site</h3>
+              <p class="project-card__summary">이 포트폴리오 사이트. Vanilla JS로 구현한 모달·필터링 등 프론트엔드 인터랙션 학습.</p>
+              <div class="project-card__tags" aria-label="사용 기술">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <button
+                class="btn btn--sm project-card__detail"
+                data-project="2"
+                aria-label="Portfolio Site 상세정보 보기"
+              >상세보기</button>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="skills section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 class="section__title" id="skills-title">Skills</h2>
+        <div class="skills__grid">
+
+          <div class="skills__group">
+            <h3 class="skills__group-title">Backend</h3>
+            <ul class="skills__list" role="list">
+              <li class="skill-item">
+                <span class="skill-item__name">Java</span>
+                <div class="skill-item__bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Java 숙련도 80%">
+                  <div class="skill-item__fill" style="--pct: 80%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-item__name">Spring Boot</span>
+                <div class="skill-item__bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Spring Boot 숙련도 75%">
+                  <div class="skill-item__fill" style="--pct: 75%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-item__name">MySQL</span>
+                <div class="skill-item__bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="MySQL 숙련도 70%">
+                  <div class="skill-item__fill" style="--pct: 70%"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skills__group">
+            <h3 class="skills__group-title">Frontend</h3>
+            <ul class="skills__list" role="list">
+              <li class="skill-item">
+                <span class="skill-item__name">HTML / CSS</span>
+                <div class="skill-item__bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="HTML/CSS 숙련도 70%">
+                  <div class="skill-item__fill" style="--pct: 70%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-item__name">JavaScript</span>
+                <div class="skill-item__bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript 숙련도 60%">
+                  <div class="skill-item__fill" style="--pct: 60%"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skills__group">
+            <h3 class="skills__group-title">Tools &amp; ETC</h3>
+            <ul class="skills__list" role="list">
+              <li class="skill-item">
+                <span class="skill-item__name">Git / GitHub</span>
+                <div class="skill-item__bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Git 숙련도 70%">
+                  <div class="skill-item__fill" style="--pct: 70%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-item__name">IntelliJ IDEA</span>
+                <div class="skill-item__bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="IntelliJ 숙련도 75%">
+                  <div class="skill-item__fill" style="--pct: 75%"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 class="section__title" id="contact-title">Contact</h2>
+        <p class="contact__desc">함께 성장할 팀을 찾고 있습니다. 언제든 편하게 연락주세요.</p>
+        <ul class="contact__links" role="list">
+          <li>
+            <a
+              href="mailto:san1425865@gmail.com"
+              class="contact__item"
+              aria-label="이메일 보내기"
+            >
+              <span class="contact__icon" aria-hidden="true">✉</span>
+              <span>san1425865@gmail.com</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/LeeHakSan"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact__item"
+              aria-label="GitHub 프로필 (새 탭)"
+            >
+              <span class="contact__icon" aria-hidden="true">⌥</span>
+              <span>github.com/LeeHakSan</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p class="footer__copy">© 2026 이학산. All rights reserved.</p>
+      <p class="footer__made">Designed &amp; Built by 이학산</p>
+    </div>
+  </footer>
+
+  <!-- ===== MODAL (상호작용 기능 2) ===== -->
+  <!-- role="dialog"로 스크린리더가 모달임을 알 수 있음 -->
+  <div
+    class="modal"
+    id="project-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    aria-hidden="true"
+  >
+    <div class="modal__overlay" id="modal-overlay" tabindex="-1"></div>
+    <div class="modal__box">
+      <button class="modal__close" id="modal-close" aria-label="모달 닫기">✕</button>
+      <h2 class="modal__title" id="modal-title"></h2>
+      <p  class="modal__desc"  id="modal-desc"></p>
+      <div class="modal__meta" id="modal-meta"></div>
+      <div class="modal__links" id="modal-links"></div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
