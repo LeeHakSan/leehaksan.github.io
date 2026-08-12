@@ -530,10 +530,9 @@ a   { color: inherit; text-decoration: none; }
 }
 
 .strengths__list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
-  counter-reset: strength-counter;
 }
 
 .strength-item {
@@ -999,6 +998,7 @@ a   { color: inherit; text-decoration: none; }
   .about__list li { justify-content: center; }
 
   .sar-row { grid-template-columns: 44px 1fr; }
+  .strengths__list { grid-template-columns: 1fr; }
 }
 
 /* 태블릿 (768px ~ 1023px) */
@@ -1014,6 +1014,7 @@ a   { color: inherit; text-decoration: none; }
     grid-template-columns: 160px 1fr;
     gap: var(--space-lg);
   }
+  .strengths__list { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* 데스크탑 1366×768 최적화
