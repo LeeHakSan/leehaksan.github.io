@@ -6,7 +6,7 @@
 
 ## 어디로 가나요
 
-**공개 주소:** `https://leehaksan.github.io/portpolios/`
+**공개 주소:** `https://leehaksan.github.io/`
 
 *(GitHub Pages 배포 전이라면: 로컬에서 `index.html` 파일을 브라우저로 드래그하여 열기)*
 

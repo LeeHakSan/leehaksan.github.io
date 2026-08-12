@@ -49,6 +49,48 @@
 
 ---
 
+## 결함 A — 프로젝트 필터링 동작 안 함 (스크린샷 포함)
+
+**수정 전 스크린샷:** `screenshots/defect-a-before.jpg`
+**수정 후 스크린샷:** `screenshots/defect-a-after.jpg`
+
+| | 내용 |
+|--|------|
+| **수정 전 코드** | `js/script.js` — `card.classList.toggle('hidden', !match);` 줄을 주석 처리 |
+| **증상** | "팀 프로젝트" 필터 버튼 클릭 시 3개 카드 모두 그대로 표시됨 (필터 무효) |
+| **수정 후 코드** | 주석 제거, `toggle('hidden', !match)` 복원 |
+| **결과** | "팀 프로젝트" 클릭 → SevMerge 카드 1개만 표시 |
+
+---
+
+## 결함 B — 키보드 포커스 링 사라짐 (스크린샷 포함)
+
+**수정 전 스크린샷:** `screenshots/defect-b-before.jpg`
+**수정 후 스크린샷:** `screenshots/defect-b-after.png`
+
+| | 내용 |
+|--|------|
+| **수정 전 코드** | `css/style.css` — `:focus`, `:focus-visible` 모두 `outline: none` 으로 변경 |
+| **증상** | Tab 키로 About 링크에 포커스 이동 시 보라색 테두리가 전혀 보이지 않음 |
+| **수정 후 코드** | `:focus { outline: 2px solid var(--clr-accent); }` + `:focus:not(:focus-visible) { outline: none; }` 복원 |
+| **결과** | Tab 이동 시 보라색(#7c6fe0) 테두리 2px 표시 |
+
+---
+
+## 결함 C — 상세보기 클릭 시 모달 안 열림 (스크린샷 포함)
+
+**수정 전 스크린샷:** `screenshots/defect-c-before.jpg`
+**수정 후 스크린샷:** `screenshots/defect-c-after.jpg`
+
+| | 내용 |
+|--|------|
+| **수정 전 코드** | `js/script.js` — `modal.classList.add('open');` 줄을 주석 처리 |
+| **증상** | "상세보기" 버튼 클릭 시 화면 변화 없음, 모달 창이 열리지 않음 |
+| **수정 후 코드** | 주석 제거, `modal.classList.add('open')` 복원 |
+| **결과** | "상세보기" 클릭 → SevMerge 상세 정보 모달 정상 표시 |
+
+---
+
 ## 콘솔 오류 0건 확인 방법
 
 1. 브라우저에서 `index.html` 열기
