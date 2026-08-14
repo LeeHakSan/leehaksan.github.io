@@ -69,17 +69,4 @@ HTML/CSS/JS 전체 초안 작성, 섹션 구조 및 컴포넌트 설계, 접근�
 강점 3개의 실제 경험 내용 직접 작성 및 수정 (팀 인원 4명→7명 정정), 대상 문장 표현 확정, 공개·비공개 범위 직접 결정.
 
 **AI 말을 안 들은 일:**
-결함 A — 필터링 무효
-- Before: defect-a-before.jpg — "팀 프로젝트" 선택해도 카드 3개 전부 표시
-- After: defect-a-after.jpg — SevMerge 카드 1개만 표시
-- 원인: card.classList.toggle('hidden', !match) 주석 처리
-
-결함 B — 포커스 링 사라짐
-- Before: defect-b-before.jpg — Tab 탐색 시 About 링크에 테두리 없음
-- After: defect-b-after.png — 보라색 2px 테두리 표시
-- 원인: :focus, :focus-visible 모두 outline: none
-
-결함 C — 모달 안 열림
-- Before: defect-c-before.jpg — 상세보기 클릭해도 화면 변화 없음
-- After: defect-c-after.jpg — SevMerge 상세 정보 모달 정상 표시
-- 원인: modal.classList.add('open') 주석 처리
+AI가 SevMerge 프로젝트 설명에 팀원 수를 4명으로 작성했으나, 실제 팀 인원이 7명임을 직접 확인하고 수정했다.
